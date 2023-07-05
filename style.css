@@ -1,13 +1,22 @@
-body {
-background-color: ;
-}
 
 header {
+    display: flex;
+    justify-content: center;
 
 }
 
-#LBank {
-
+container {
+    height: 450px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+        height: 550px;
+        left: 400px;
+        top: 10%;
+    width: 750px;
+      border-color: orange;
+    border-style: solid;
+    
 }
 
 #Object {
@@ -31,5 +40,5 @@ header {
 }
 
 #GuessBx {
-    
+
 }

@@ -31,3 +31,14 @@ let space;              // Number of spaces in word '-'
 
 
 
+
+
+
+
+
+
+
+//win
+
+//lose
+
