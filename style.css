@@ -10,11 +10,16 @@ header {
 }
 
 body {
-    background-color: black;
+    background: url('https://i.pinimg.com/originals/07/78/cc/0778cc8867eee12e60673f6f44e43e77.gif');
+    height: 100vh;
+    flex-direction: column;
+    grid-template-rows: 15vmin 35vmin 15vmin 10vmin;
+    position: relative;
+    background-size: cover;
 }
 
 container {
-    margin: 0 auto;
+    margin: 10px;
     position: absolute;
     text-align: center;
     height: 570px;
@@ -24,34 +29,106 @@ container {
     border-color: yellow;
     border-style: solid;
     background-color: orange;
+    display: flex;
+    flex-direction: column;
     
 }
 
-#Object {
+.sec1 {
+    
+    width: 930px;
+    height: 200px;
+    background-color: wheat;
+    font-size: 25px;
+    text-align: center;
+    line-height: 200px;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+#wCat {
+    height: 100px;
+    border-style: solid;
+    border-color: pink;
+
+}
+
+.sec2 {
+    width: 930px;
+  height: 200px;
+  background-color: wheat;
+  font-size: 25px;
+  text-align: center;
+  line-height: 200px;
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+#lBank {
+    height: 50px;    
+    border-style: solid;
+    border-color: pink;
+}
+
+#lives {
+    height: 50px;
+    border-style: solid;
+    border-color: blue;
+}
+
+#board {
+    height: 50px;
+    border-style: solid;
+    border-color: purple;
+}
+
+#lGrave {
+    height: 50px;
+    border-style: solid;
+    border-color:#74BB82;
+}
+
+
+.sec3 {
+    width: 930px;
+  height: 200px;
+  background-color: wheat;
+  font-size: 25px;
+  text-align: center;
+  line-height: 200px;
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+#guessBx {
+    height: 50px;
+    border-style: solid;
+    border-color: pink;
+}
+
+#object {
+    height: 50px;
+    border-style: solid;
+    border-color: blue;
 
 
 }
 
-#Lives {
-
+#getHints {
+    height: 50px;
+    border-style: solid;
+    border-color:#74BB82;
 }
-
-#LGrave {
-
-}
-
-#Hints {
-
-}
-
-#WCat {
-
-}
-
-#GuessBx {
-
-}
-
 /*.bottom {
   position: absolute;
   bottom: 0;

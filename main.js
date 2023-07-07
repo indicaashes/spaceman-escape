@@ -9,13 +9,17 @@ let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
 let wCat;         // Array of topics
 let selectdCat;     // Selected catagory
 let getHint ;          // Word getHint
-let selectdWord ;      // Selected word
+let selectdChar ;      // Selected letter
 let guess ;             // Guess
 let stordGuesses = [ ]; // Stored guesses
 let lives;             // Lives
 let space;              // Number of spaces in word '-'
 
 /*-------------cached elements-----------------*/
+let getHints = document.getElementById("getHints");
+let selectdCat = document.getElementById("selectdCat");
+let selectdChar = document.getElementsById("selectdChar");
+let stordGuesses = d
 
 
 
@@ -23,18 +27,37 @@ let space;              // Number of spaces in word '-'
 
 /*-------------event listeners-----------------*/
 
+document.querySelector('getHints')
+  .addEventListener('click', );
+
+  document.querySelector('selectdCat')
+  .addEventListener('click', );
+
 
 
 
 /*-------------fucntions-----------------*/
 
 
+//game play:
+
+function play() {
+    categories = [
+        [], [],[]
+    ];
+}
 
 
+//selecting a category
+function selectdCat() {}
 
 
+//getting a hint
+function getHint() {}
 
+// lives left
 
+function lives() {}
 
 
 
