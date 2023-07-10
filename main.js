@@ -3,7 +3,6 @@ let lives = 6;
 let selectedWord = "";
 let hiddenWord = [];
 let guessedLetters = [];
-let fragments = 0; // Number of picture fragments displayed
 
 function getRandomWord() {
   const randomIndex = Math.floor(Math.random() * words.length);
@@ -15,12 +14,10 @@ function initializeGame() {
   hiddenWord = Array(selectedWord.length).fill("_");
   lives = 6;
   guessedLetters = [];
-  fragments = 0; // Reset the number of fragments
 
   updateGuessBx();
   updateLives();
   updateLetterGrave();
-  updateBoard(); // Update the board with picture fragments
 
   // Enable all letter buttons
   const letterButtons = document.querySelectorAll("#alphabet button");
@@ -44,12 +41,6 @@ function updateLetterGrave() {
   letterGraveElement.textContent = "Letter Grave: " + guessedLetters.join(" ");
 }
 
-function updateBoard() {
-  const boardElement = document.getElementById("board");
-  const fragment = "█";
-  const fragmentsDisplay = fragment.repeat(fragments);
-  boardElement.textContent = fragmentsDisplay;
-}
 
 function guessLetter(letter) {
   if (guessedLetters.includes(letter)) {
@@ -76,10 +67,8 @@ function guessLetter(letter) {
     }
   } else {
     lives--;
-    fragments++; // Increase the number of fragments
     updateLives();
     updateLetterGrave();
-    updateBoard(); // Update the board with picture fragments
 
     if (lives === 0) {
       alert("Game over! The word was: " + selectedWord);
@@ -104,10 +93,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetButton = document.getElementById("reset");
   resetButton.addEventListener("click", () => {
     initializeGame();
-  });
-
-  const hintButton = document.getElementById("hint");
-  hintButton.addEventListener("click", () => {
-    alert("Hint: The word is a type of food.");
   });
 });
