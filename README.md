@@ -15,7 +15,7 @@ https://i.imgur.com/93r9j2D.png
 
 # Getting Started
 
-[Click to Play Spaceman Escape!](your deployment url here)
+[Click to Play Spaceman Escape!: https://indicaashes.github.io/spaceman-escape/
 
 # Next Steps
 
