@@ -1,160 +1,189 @@
-header {
-    display: flex;
-    justify-content: center;
-    font-family: 'Knewave';
-  font-weight: strong;
-  font-size: 70px;
-  color: white;
+  header {
+      display: flex;
+      justify-content: center;
+      font-family: 'Knewave';
+    font-weight: strong;
+    font-size: 70px;
+    color: white;
+  
+  }
+  
+  body {
+      background: url('https://i.pinimg.com/originals/07/78/cc/0778cc8867eee12e60673f6f44e43e77.gif');
+      height: 100vh;
+      flex-direction: column;
+      grid-template-rows: 15vmin 35vmin 15vmin 10vmin;
+      position: relative;
+      background-size: cover;
+      background-color: rgba(254,254,254,0.7);
+  }
+  
+  container {
+      margin: 10px;
+      position: absolute;
+      text-align: center;
+      height: 570px;
+      left: 300px;
+      top: 120px;
+      width: 950px;
+      border-style: solid;
+      border-color: rgba(254,254,254,0.7);
+      background-color: rgba(254,254,254,0.7);
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
 
-}
+      
+  }
+  
+  .sec1 {
+      
+      width: 930px;
+      height: 50px;
+      background-color: (254,254,254,0.7);      
+      border-color: rgba(254,254,254,0.7);
+      font-size: 15px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 20px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      position: absolute;
+      bottom: 500px;
+      font-size: 20px;
+      
+     }
 
-body {
-    background: url('https://i.pinimg.com/originals/07/78/cc/0778cc8867eee12e60673f6f44e43e77.gif');
-    height: 100vh;
-    flex-direction: column;
-    grid-template-rows: 15vmin 35vmin 15vmin 10vmin;
-    position: relative;
-    background-size: cover;
-}
+     .spaceman-fragment {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
 
-container {
-    margin: 10px;
-    position: absolute;
-    text-align: center;
-    height: 570px;
-    left: 300px;
-    top: 120px;
-    width: 950px;
-    border-color: yellow;
-    border-style: solid;
-    background-color: orange;
-    display: flex;
-    flex-direction: column;
+    .spaceman-alien {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+  
     
-}
-
-.sec1 {
-    
-    width: 930px;
-    height: 50px;
-    background-color: wheat;
-    font-size: 15px;
+  .sec2 {
+      width: 930px;
+    height: 385px;
+    background-color: rgba(254,254,254,0.7);
+    border-color: rgba(254,254,254,0.7);
+    font-size: 25px;
     text-align: center;
-    line-height: 50px;
+    line-height: 200px;
     border-radius: 20px;
-    margin: 0 auto;
+    margin: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     position: absolute;
-    bottom: 500px;
-    font-size: 20px;
-    
-   }
-
-
-
-
-#categories {
-font-size: 20px;
-margin: 0 auto;
-}
-
-.sec2 {
-    width: 930px;
-  height: 385px;
-  background-color: lightsalmon;
-  font-size: 25px;
-  text-align: center;
-  line-height: 200px;
-  border-radius: 20px;
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 103px;
-}
-
-#alphabet {
-    height: 380px;
-    width: 190px;    
-    border-style: solid;
-    border-color: hotpink;
-    justify-content: center;
-    line-height: 50px;
-}
-
-#alphabet button.selected {
-  background-color: pink;
-  color: black;
-}
-
-.sec2-5 {
-    
-    width: 650px;
-    background-color: lime;
-    text-align: center;
-    justify-content: center;
-    position: relative;
-    font-size: 15px;
-    margin: 0 auto;
-
-}
-#lives {
-    height: 35px;
-    width: 500px;
-    border-style: solid;
-    border-color: blue;
-margin: 0 auto;
-line-height: 30px;
-}
-
-#board {
-    height: 340px;
-    width: 600px;
-    border-style: solid;
-    border-color: purple;
- 
-}
-
-#lGrave {
-    height: 380px;
-    width: 190px;
-    border-style: solid;
-    border-color:#74BB82; 
-    justify-content: center;
-    line-height: 50px;
-}
-
-
-.sec3 {
-width: 930px;
-  height: 100px;
-  background-color: wheat;
-  font-size: 25px;
-  text-align: center;
-  line-height: 100px;
-  border-radius: 20px;
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0px;
+    bottom: 103px;
   }
+  
+  #alphabet {
+      height: 380px;
+      width: 190px;    
+      border-style: solid;
+      border-color: rgba(254,254,254,0.7);
+      border-radius: 20px;
+      background-color: rgba(254,254,254,0.7);
+      justify-content: center;
+      line-height: 50px;
+  }
+  
+  #alphabet button.selected {
+    background-color: rgba(254,254,254,0.7);
+    color: black;
+  }
+  
+  .sec2-5 {
+      
+      width: 650px;
+      background-color: rgba(254,254,254,0.7);
+      border-color: rgba(254,254,254,0.7);
+      text-align: center;
+      justify-content: center;
+      position: relative;
+      font-size: 15px;
+      margin: 0 auto;
+      border-radius: 20px;
 
-#object {
-    height: 90px;
-    width: 200px;
-    border-style: solid;
-    border-color: blue;
+  
+  }
+  #lives {
+      height: 35px;
+      width: 500px;
+      border-style: solid;
+      border-color: rgba(254,254,254,0.7);
+      border-radius: 20px;
+      background-color: rgba(254,254,254,0.7);
+  margin: 0 auto;
+  line-height: 30px;
+  }
+  
+  #board {
+      height: 340px;
+      width: 600px;
+      border-style: solid;
+      background-color: rgba(254,254,254,0.7);
+      border-color: rgba(254,254,254,0.7);
+      border-radius: 20px;
 
-}
-#guessBx {
-    height: 50px;
-    width: 500px;
-    border-style: solid;
-    border-color: pink;
-    line-height: 40px;
-}
+   
+  }
+  
+  #lGrave {
+      height: 380px;
+      width: 190px;
+      border-style: solid;
+      border-color: rgba(254,254,254,0.7); 
+      border-radius: 20px;
+      background-color: rgba(254,254,254,0.7);
+      justify-content: center;
+      line-height: 50px;
+  }
+  
+  
+  .sec3 {
+  width: 930px;
+    height: 100px;
+    background-color: rgba(254,254,254,0.7);
+    font-size: 25px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0px;
+    }
+  
+  #showHint {
+      height: 90px;
+      width: 200px;
+      border-style: solid;
+      border-color: rgba(254,254,254,0.7);
+      border-radius: 20px;
+      background-color: rgba(254,254,254,0.7);
+    font-size: 15px;
+      word-wrap: normal;
+    line-height: 30px;
+  
+  }
+  #guessBx {
+      height: 50px;
+      width: 500px;
+      border-style: solid;
+      border-color: rgba(254,254,254,0.7);
+      border-radius: 20px;
+      background-color: rgba(254,254,254,0.7);
+      line-height: 40px;
+  }
