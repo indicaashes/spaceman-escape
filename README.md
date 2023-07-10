@@ -5,7 +5,7 @@ the game is initialized by clinking the play button in the lower right corner. P
 
 # Screenshot
 
-<img src="https://imgur.com/93r9j2D">
+https://i.imgur.com/93r9j2D.png
 
 # Technologies Used
 
