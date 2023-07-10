@@ -33,10 +33,7 @@ function initializeGame() {
   updateGuessBx();
   updateLives();
   updateLetterGrave();
-<<<<<<< HEAD
   updateBoard();
-=======
->>>>>>> 552f16b929ca86b69063686a30ecba39901dfef7
 
   const letterButtons = document.querySelectorAll("#alphabet button");
   letterButtons.forEach((button) => {
@@ -71,7 +68,6 @@ function updateLetterGrave() {
   letterGraveElement.textContent = "Letter Grave: " + guessedLetters.join(" ");
 }
 
-<<<<<<< HEAD
 function updateBoard() {
   const boardElement = document.getElementById("board");
   boardElement.innerHTML = ""; 
@@ -91,8 +87,6 @@ function updateBoard() {
     }
   }
 }
-=======
->>>>>>> 552f16b929ca86b69063686a30ecba39901dfef7
 
 function guessLetter(letter) {
   if (guessedLetters.includes(letter)) {
@@ -123,10 +117,7 @@ function guessLetter(letter) {
     lives--;
     updateLives();
     updateLetterGrave();
-<<<<<<< HEAD
     updateBoard();
-=======
->>>>>>> 552f16b929ca86b69063686a30ecba39901dfef7
 
     if (lives === 0) {
       setTimeout(() => {
@@ -167,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const showHintElement = document.getElementById("showHint");
     showHintElement.textContent = "";
   });
-<<<<<<< HEAD
 
   const hintButton = document.getElementById("hint");
   const showHintElement = document.getElementById("showHint");
@@ -176,6 +166,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const hint = getHint();
     showHintElement.textContent = hint;
   });
-=======
->>>>>>> 552f16b929ca86b69063686a30ecba39901dfef7
 });
