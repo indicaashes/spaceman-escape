@@ -33,7 +33,10 @@ function initializeGame() {
   updateGuessBx();
   updateLives();
   updateLetterGrave();
-  updateBoard(); // Update the board with picture fragments
+<<<<<<< HEAD
+  updateBoard();
+=======
+>>>>>>> 552f16b929ca86b69063686a30ecba39901dfef7
 
   const letterButtons = document.querySelectorAll("#alphabet button");
   letterButtons.forEach((button) => {
@@ -68,12 +71,28 @@ function updateLetterGrave() {
   letterGraveElement.textContent = "Letter Grave: " + guessedLetters.join(" ");
 }
 
+<<<<<<< HEAD
 function updateBoard() {
   const boardElement = document.getElementById("board");
-  const fragment = "█";
-  const fragmentsDisplay = fragment.repeat(fragments);
-  boardElement.textContent = fragmentsDisplay;
+  boardElement.innerHTML = ""; 
+
+  if (lives === 0) {
+    const spacemanImage = document.createElement("img");
+    spacemanImage.src = "spacemanFrags/spaceman_alien.jpg";
+    spacemanImage.classList.add("spaceman-alien");
+    boardElement.appendChild(spacemanImage);
+  } else {
+    for (let i = 0; i < lives; i++) {
+      const img = document.createElement("img");
+      img.src = `spacemanFrags/${i + 1}.jpg`;
+      img.classList.add("spaceman-fragment");
+      img.style.visibility = i < lives - 1 ? "hidden" : "visible";
+      boardElement.appendChild(img);
+    }
+  }
 }
+=======
+>>>>>>> 552f16b929ca86b69063686a30ecba39901dfef7
 
 function guessLetter(letter) {
   if (guessedLetters.includes(letter)) {
@@ -104,7 +123,10 @@ function guessLetter(letter) {
     lives--;
     updateLives();
     updateLetterGrave();
-    updateBoard(); // Update the board with picture fragments
+<<<<<<< HEAD
+    updateBoard();
+=======
+>>>>>>> 552f16b929ca86b69063686a30ecba39901dfef7
 
     if (lives === 0) {
       setTimeout(() => {
@@ -145,9 +167,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const showHintElement = document.getElementById("showHint");
     showHintElement.textContent = "";
   });
+<<<<<<< HEAD
 
   const hintButton = document.getElementById("hint");
+  const showHintElement = document.getElementById("showHint");
+
   hintButton.addEventListener("click", () => {
-    alert("Hint: The word is a type of food.");
+    const hint = getHint();
+    showHintElement.textContent = hint;
   });
+=======
+>>>>>>> 552f16b929ca86b69063686a30ecba39901dfef7
 });
