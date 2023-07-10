@@ -1,67 +1,113 @@
-/* - WCat is going to be an array
-- Objective box will not be manipulated with js 
-GuessBx will be an array*/
+const words = ["PIZZA", "BURGER", "SUSHI", "PASTA", "STEAK"];
+let lives = 6;
+let selectedWord = "";
+let hiddenWord = [];
+let guessedLetters = [];
+let fragments = 0; // Number of picture fragments displayed
 
-/*-------------Variables-----------------*/
-let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-          'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-          't', 'u', 'v', 'w', 'x', 'y', 'z'];
-let wCat;         // Array of topics
-let selectdCat;     // Selected catagory
-let getHint ;          // Word getHint
-let selectdChar ;      // Selected letter
-let guess ;             // Guess
-let stordGuesses = [ ]; // Stored guesses
-let lives;             // Lives
-let space;              // Number of spaces in word '-'
-
-/*-------------cached elements-----------------*/
-let getHints = document.getElementById("getHints");
-let selectdCat = document.getElementById("selectdCat");
-let selectdChar = document.getElementsById("selectdChar");
-let stordGuesses = d
-
-
-
-
-
-/*-------------event listeners-----------------*/
-
-document.querySelector('getHints')
-  .addEventListener('click', );
-
-  document.querySelector('selectdCat')
-  .addEventListener('click', );
-
-
-
-
-/*-------------fucntions-----------------*/
-
-
-//game play:
-
-function play() {
-    categories = [
-        [], [],[]
-    ];
+function getRandomWord() {
+  const randomIndex = Math.floor(Math.random() * words.length);
+  return words[randomIndex];
 }
 
+function initializeGame() {
+  selectedWord = getRandomWord();
+  hiddenWord = Array(selectedWord.length).fill("_");
+  lives = 6;
+  guessedLetters = [];
+  fragments = 0; // Reset the number of fragments
 
-//selecting a category
-function selectdCat() {}
+  updateGuessBx();
+  updateLives();
+  updateLetterGrave();
+  updateBoard(); // Update the board with picture fragments
 
+  // Enable all letter buttons
+  const letterButtons = document.querySelectorAll("#alphabet button");
+  letterButtons.forEach((button) => {
+    button.disabled = false;
+  });
+}
 
-//getting a hint
-function getHint() {}
+function updateGuessBx() {
+  const guessBxEl = document.getElementById("guessBx");
+  guessBxEl.textContent = hiddenWord.join(" ");
+}
 
-// lives left
+function updateLives() {
+  const livesElement = document.getElementById("lives");
+  livesElement.textContent = "Lives: " + lives;
+}
 
-function lives() {}
+function updateLetterGrave() {
+  const letterGraveElement = document.getElementById("lGrave");
+  letterGraveElement.textContent = "Letter Grave: " + guessedLetters.join(" ");
+}
 
+function updateBoard() {
+  const boardElement = document.getElementById("board");
+  const fragment = "█";
+  const fragmentsDisplay = fragment.repeat(fragments);
+  boardElement.textContent = fragmentsDisplay;
+}
 
+function guessLetter(letter) {
+  if (guessedLetters.includes(letter)) {
+    return;
+  }
 
-//win
+  guessedLetters.push(letter);
 
-//lose
+  let letterFound = false;
 
+  for (let i = 0; i < selectedWord.length; i++) {
+    if (selectedWord[i] === letter) {
+      hiddenWord[i] = letter;
+      letterFound = true;
+    }
+  }
+
+  if (letterFound) {
+    updateGuessBx();
+
+    if (!hiddenWord.includes("_")) {
+      alert("Congratulations! You guessed the word.");
+      initializeGame();
+    }
+  } else {
+    lives--;
+    fragments++; // Increase the number of fragments
+    updateLives();
+    updateLetterGrave();
+    updateBoard(); // Update the board with picture fragments
+
+    if (lives === 0) {
+      alert("Game over! The word was: " + selectedWord);
+      initializeGame();
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initializeGame();
+
+  const letterButtons = document.querySelectorAll("#alphabet button");
+  letterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const letter = button.textContent;
+      guessLetter(letter);
+      button.disabled = true;
+      button.classList.add("selected");
+    });
+  });
+
+  const resetButton = document.getElementById("reset");
+  resetButton.addEventListener("click", () => {
+    initializeGame();
+  });
+
+  const hintButton = document.getElementById("hint");
+  hintButton.addEventListener("click", () => {
+    alert("Hint: The word is a type of food.");
+  });
+});
