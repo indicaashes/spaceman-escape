@@ -33,7 +33,7 @@ function initializeGame() {
   updateGuessBx();
   updateLives();
   updateLetterGrave();
-  updateBoard();
+  updateBoard(); // Update the board with picture fragments
 
   const letterButtons = document.querySelectorAll("#alphabet button");
   letterButtons.forEach((button) => {
@@ -70,22 +70,9 @@ function updateLetterGrave() {
 
 function updateBoard() {
   const boardElement = document.getElementById("board");
-  boardElement.innerHTML = ""; 
-
-  if (lives === 0) {
-    const spacemanImage = document.createElement("img");
-    spacemanImage.src = "spacemanFrags/spaceman_alien.jpg";
-    spacemanImage.classList.add("spaceman-alien");
-    boardElement.appendChild(spacemanImage);
-  } else {
-    for (let i = 0; i < lives; i++) {
-      const img = document.createElement("img");
-      img.src = `spacemanFrags/${i + 1}.jpg`;
-      img.classList.add("spaceman-fragment");
-      img.style.visibility = i < lives - 1 ? "hidden" : "visible";
-      boardElement.appendChild(img);
-    }
-  }
+  const fragment = "█";
+  const fragmentsDisplay = fragment.repeat(fragments);
+  boardElement.textContent = fragmentsDisplay;
 }
 
 function guessLetter(letter) {
@@ -117,7 +104,7 @@ function guessLetter(letter) {
     lives--;
     updateLives();
     updateLetterGrave();
-    updateBoard();
+    updateBoard(); // Update the board with picture fragments
 
     if (lives === 0) {
       setTimeout(() => {
@@ -160,10 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const hintButton = document.getElementById("hint");
-  const showHintElement = document.getElementById("showHint");
-
   hintButton.addEventListener("click", () => {
-    const hint = getHint();
-    showHintElement.textContent = hint;
+    alert("Hint: The word is a type of food.");
   });
 });
